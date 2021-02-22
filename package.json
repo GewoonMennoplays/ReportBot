@@ -1,0 +1,29 @@
+{
+  "name": "reportbot",
+  "version": "1.0.0",
+  "description": "A report bot, made for Discord",
+  "main": "index.js",
+  "scripts": {
+    "test": ".help"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GewoonMennoplays/ReportBot.git"
+  },
+  "keywords": [
+    "report"
+  ],
+  "author": "Menno#0002",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GewoonMennoplays/ReportBot/issues"
+  },
+  "homepage": "https://github.com/GewoonMennoplays/ReportBot#readme",
+  "dependencies": {
+    "better-sqlite3": "^7.1.2",
+    "discord.js": "^12.5.1",
+    "enmap": "^5.8.4",
+    "fs": "0.0.1-security",
+    "moment": "^2.29.1"
+  }
+}
