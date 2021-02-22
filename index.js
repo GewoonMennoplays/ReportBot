@@ -1,15 +1,15 @@
-// Getting the packages which are required for the main file
+//-----------------------------------------------------------------
 
 const Discord = require("discord.js");
 const fs = require("fs");
 const Enmap = require("enmap")
 
-// Let the system make a bot client
+//-----------------------------------------------------------------
 
 const client = new Discord.Client()
 const config = require("./config.json")
 
-// Getting all the command and event files
+//-----------------------------------------------------------------
 
 fs.readdir('./events/', (err, files) => {
   if (err) return console.error(err);
@@ -33,6 +33,8 @@ fs.readdir('./commands/', (err, files) => {
     client.commands.set(commandName, props);
   });
 });
+
+//-----------------------------------------------------------------
 
 client.login(config.general.token);
 
