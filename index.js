@@ -12,30 +12,50 @@ const config = require("./config.json")
 //-----------------------------------------------------------------
 
 fs.readdir('./events/', (err, files) => {
+
+  console.log("Loading events...\n")
+
   if (err) return console.error(err);
+
   files.forEach(file => {
+
     const event = require(`./events/${file}`);
+
     let eventName = file.split(".")[0];
+
     client.on(eventName, event.bind(null, client));
-    console.log(`Event ingeladenn: ${file}`)
+
+    console.log(`+ ${file}`)
+
   });
 });
 
 client.commands = new Enmap();
 
 fs.readdir('./commands/', (err, files) => {
+
+  console.log("\nLoading commnds...\n")
+
   if (err) return console.error(err);
+
   files.forEach(file => {
+
+
     if (!file.endsWith('.js')) return;
+
     let props = require(`./commands/${file}`);
+
     let commandName = file.split(".")[0];
-    console.log(`Commando ingeladen: ${commandName}.js`)
+
+    console.log(`+ ${commandName}.js`)
+
     client.commands.set(commandName, props);
+
   });
 });
 
 //-----------------------------------------------------------------
 
-client.login(config.general.token);
+client.login(config.token)
 
-console.log("Mikey is ready to begin")
+console.log("Starting up ReportBot...\n")
