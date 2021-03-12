@@ -1,14 +1,10 @@
-const SQLite = require("better-sqlite3");
-const sql = new SQLite('./data/reports.sqlite');
 const Discord = require("discord.js")
 const config = require("../config.json")
 const moment = require("moment")
 
-module.exports.run = async (client, message, args) => {
-
-message.reply("This command will be rewriten soon")
-
 return;
+
+module.exports.run = async (client, message, args) => {
 
 let rReason;
 let rProof;
